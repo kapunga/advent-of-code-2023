@@ -8,8 +8,10 @@ object Aoc2023 extends IOApp {
   case class PuzzleDef(file: String, solver: fs2.Stream[IO, String] => IO[String])
 
   val puzzles: Map[String, PuzzleDef] = Map(
-    "d01a" -> PuzzleDef("aoc2023/d01a.txt", CallibrationConfig.read(false)),
-    "d01b" -> PuzzleDef("aoc2023/d01a.txt", CallibrationConfig.read(true))
+    "d01a" -> PuzzleDef("aoc2023/d01a.txt", CalibrationConfig.read(false)),
+    "d01b" -> PuzzleDef("aoc2023/d01a.txt", CalibrationConfig.read(true)),
+    "d02a" -> PuzzleDef("aoc2023/d02a.txt", CubeGame.solve(CubeGame.partOneDraw)),
+    "d02b" -> PuzzleDef("aoc2023/d02a.txt", CubeGame.power)
   )
 
   override def run(args: List[String]): IO[ExitCode] = {
@@ -31,4 +33,3 @@ object Aoc2023 extends IOApp {
       .as(ExitCode.Success)
   }
 }
-
