@@ -13,7 +13,9 @@ object Aoc2023 extends IOApp {
     "d02a" -> PuzzleDef("aoc2023/d02.txt", CubeGame.solve(CubeGame.partOneDraw)),
     "d02b" -> PuzzleDef("aoc2023/d02.txt", CubeGame.power),
     "d03a" -> PuzzleDef("aoc2023/d03.txt", EngineSchematic.partNumbers),
-    "d03b" -> PuzzleDef("aoc2023/d03.txt", EngineSchematic.gearRatios))
+    "d03b" -> PuzzleDef("aoc2023/d03.txt", EngineSchematic.gearRatios),
+    "d04a" -> PuzzleDef("aoc2023/d04.txt", Lottery.points),
+    "d04b" -> PuzzleDef("aoc2023/d04.txt", Lottery.totalTickets))
 
   override def run(args: List[String]): IO[ExitCode] = {
     args.headOption match
