@@ -15,7 +15,9 @@ object Aoc2023 extends IOApp {
     "d03a" -> PuzzleDef("aoc2023/d03.txt", EngineSchematic.partNumbers),
     "d03b" -> PuzzleDef("aoc2023/d03.txt", EngineSchematic.gearRatios),
     "d04a" -> PuzzleDef("aoc2023/d04.txt", Lottery.points),
-    "d04b" -> PuzzleDef("aoc2023/d04.txt", Lottery.totalTickets))
+    "d04b" -> PuzzleDef("aoc2023/d04.txt", Lottery.totalTickets),
+    "d05a" -> PuzzleDef("aoc2023/d05.txt", Catalogue.lookup),
+    "d05b" -> PuzzleDef("aoc2023/d05.txt", Catalogue.lookupRange))
 
   override def run(args: List[String]): IO[ExitCode] = {
     args.headOption match
@@ -33,6 +35,8 @@ object Aoc2023 extends IOApp {
 
     pd.solver(puzzleStream)
       .flatMap(result => Console[IO].println(s"Puzzle Result: $result"))
+      .timed
+      .flatMap((t, _) => Console[IO].println(s"Timing: ${t.toMillis} ms"))
       .as(ExitCode.Success)
   }
 }
