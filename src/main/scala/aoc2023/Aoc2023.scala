@@ -21,7 +21,9 @@ object Aoc2023 extends IOApp {
     "d06a" -> PuzzleDef("aoc2023/d06.txt", BoatGame.optionsMulti),
     "d06b" -> PuzzleDef("aoc2023/d06.txt", BoatGame.optionsSingle),
     "d07a" -> PuzzleDef("aoc2023/d07.txt", CamelCards.winnings),
-    "d07b" -> PuzzleDef("aoc2023/d07.txt", CamelCards.wildWinnings))
+    "d07b" -> PuzzleDef("aoc2023/d07.txt", CamelCards.wildWinnings),
+    "d08a" -> PuzzleDef("aoc2023/d08.txt", CamelDirections.follow),
+    "d08b" -> PuzzleDef("aoc2023/d08.txt", CamelDirections.followAll))
 
   override def run(args: List[String]): IO[ExitCode] = {
     args.headOption match
