@@ -13,5 +13,7 @@ lazy val root = project
       "org.typelevel" %% "toolkit-test" % "0.1.19" % Test
     ),
 
-    Compile / run / fork := true
+    Compile / run / fork := true,
+
+    console / initialCommands := """import aoc2023.*; import cats.effect.unsafe.implicits.global"""
   )

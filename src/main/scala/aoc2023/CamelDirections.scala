@@ -55,7 +55,6 @@ object CamelDirections {
 
     for {
       stepsList <- startList.traverse(start => followDirections(dir, guide, start, s => !s.endsWith("Z")))
-      _ <- Console[IO].println(stepsList)
     } yield leastCommonMultiple(stepsList)
   }
 
