@@ -29,7 +29,9 @@ object Aoc2023 extends IOApp {
     "d10a" -> PuzzleDef("aoc2023/d10.txt", PipeMaze.maxLength),
     "d10b" -> PuzzleDef("aoc2023/d10.txt", PipeMaze.interior),
     "d11a" -> PuzzleDef("aoc2023/d11.txt", GalaxyMap.distances(1, _)),
-    "d11b" -> PuzzleDef("aoc2023/d11.txt", GalaxyMap.distances(1000000, _)))
+    "d11b" -> PuzzleDef("aoc2023/d11.txt", GalaxyMap.distances(1000000, _)),
+    "d12a" -> PuzzleDef("aoc2023/d12.txt", HotSpringDiagrams.possibilities),
+    "d12b" -> PuzzleDef("aoc2023/d12.txt", HotSpringDiagrams.bigPossibilities))
 
   override def run(args: List[String]): IO[ExitCode] = {
     args.headOption match
