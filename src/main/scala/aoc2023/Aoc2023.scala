@@ -33,7 +33,9 @@ object Aoc2023 extends IOApp {
     "d12a" -> PuzzleDef("aoc2023/d12.txt", HotSpringDiagrams.possibilities),
     "d12b" -> PuzzleDef("aoc2023/d12.txt", HotSpringDiagrams.bigPossibilities),
     "d13a" -> PuzzleDef("aoc2023/d13.txt", MirrorFinder.findAll),
-    "d13b" -> PuzzleDef("aoc2023/d13.txt", MirrorFinder.findSmudged))
+    "d13b" -> PuzzleDef("aoc2023/d13.txt", MirrorFinder.findSmudged),
+    "d14a" -> PuzzleDef("aoc2023/d14.txt", RockPlatform.checkLoad),
+    "d14b" -> PuzzleDef("aoc2023/d14.txt", RockPlatform.loadTest))
 
   override def run(args: List[String]): IO[ExitCode] = {
     args.headOption match
