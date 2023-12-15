@@ -31,7 +31,9 @@ object Aoc2023 extends IOApp {
     "d11a" -> PuzzleDef("aoc2023/d11.txt", GalaxyMap.distances(1, _)),
     "d11b" -> PuzzleDef("aoc2023/d11.txt", GalaxyMap.distances(1000000, _)),
     "d12a" -> PuzzleDef("aoc2023/d12.txt", HotSpringDiagrams.possibilities),
-    "d12b" -> PuzzleDef("aoc2023/d12.txt", HotSpringDiagrams.bigPossibilities))
+    "d12b" -> PuzzleDef("aoc2023/d12.txt", HotSpringDiagrams.bigPossibilities),
+    "d13a" -> PuzzleDef("aoc2023/d13.txt", MirrorFinder.findAll),
+    "d13b" -> PuzzleDef("aoc2023/d13.txt", MirrorFinder.findSmudged))
 
   override def run(args: List[String]): IO[ExitCode] = {
     args.headOption match
