@@ -35,7 +35,9 @@ object Aoc2023 extends IOApp {
     "d13a" -> PuzzleDef("aoc2023/d13.txt", MirrorFinder.findAll),
     "d13b" -> PuzzleDef("aoc2023/d13.txt", MirrorFinder.findSmudged),
     "d14a" -> PuzzleDef("aoc2023/d14.txt", RockPlatform.checkLoad),
-    "d14b" -> PuzzleDef("aoc2023/d14.txt", RockPlatform.loadTest))
+    "d14b" -> PuzzleDef("aoc2023/d14.txt", RockPlatform.loadTest),
+    "d15a" -> PuzzleDef("aoc2023/d15.txt", AsciiHash.runHash),
+    "d15b" -> PuzzleDef("aoc2023/d15.txt", AsciiHash.lensePower))
 
   override def run(args: List[String]): IO[ExitCode] = {
     args.headOption match
