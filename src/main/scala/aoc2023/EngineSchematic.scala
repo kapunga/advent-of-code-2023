@@ -18,12 +18,12 @@ object EngineSchematic {
   private def partsAndNums(diagram: fs2.Stream[IO, String]): IO[(List[Part], List[Num])] =
     diagram
       .zipWithIndex
-      .map({ case (s, i) => parseRow(i, s) })
+      .map({ case (s, i) => parseRow(i.toInt, s) })
       .compile
       .fold[(List[Part], List[Num])]((Nil, Nil))({ case ((parts, nums), (p, n)) => (parts ++ p, nums ++ n) })
 
   @tailrec
-  def parseRow(rowNum: Long, row: String, index: Int = 0, parts: List[Part] = Nil, nums: List[Num] = Nil): (List[Part], List[Num]) = {
+  def parseRow(rowNum: Int, row: String, index: Int = 0, parts: List[Part] = Nil, nums: List[Num] = Nil): (List[Part], List[Num]) = {
     if (row.isEmpty) (parts.reverse, nums.reverse)
     else if (row.head == '.') parseRow(rowNum, row.tail, index + 1, parts, nums)
     else if (!row.head.isDigit) parseRow(rowNum, row.tail, index + 1, Part(row.head, Point(rowNum, index)) :: parts, nums)
@@ -73,8 +73,6 @@ object EngineSchematic {
     }
   }
 }
-
-case class Point(x: Long, y: Long)
 
 case class Part(part: Char, loc: Point)
 

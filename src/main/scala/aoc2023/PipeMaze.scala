@@ -32,7 +32,7 @@ case class Coord(x: Int, y: Int) {
 
 type Dimensions = Coord
 
-class Maze(start: Coord, dimensions: Dimensions, chart: Chart) {
+class Maze(start: Coord, dimensions: Dimensions, chart: Chart[Char]) {
   def charAt(p: Coord): Char = chart(p.y)(p.x)
 
   def findCircuit: IO[List[Coord]] = {
